@@ -5,9 +5,9 @@
       <li v-for="product in products" :key="product.id">
         <span>Name: {{ product.name }}</span>
         <input v-model.number="product.stock">
+        <button v-on:click="addStock(product)">Add Stock</button>
+        <button v-on:click="removeStock(product)">Remove Stock</button>
         <strong v-if="product.stock <= 0"> *** OUT OF STOCK</strong>
-        <button @click="addStock(product)">Add Stock</button>
-        <button @click="removeStock(product)">Remove Stock</button>
       </li>
     </ol>
     <p>Total Items in Stock: {{ getTotalItemsInStock }}</p>
