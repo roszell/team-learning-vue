@@ -1,6 +1,16 @@
 <template>
   <div>
-    <h1>Welcome to the Wal-Mart inventory manager!</h1>
+    <h1>Welcome to the {{ storeName }} inventory manager!</h1>
+    <ol>
+      <li v-for="product in products" :key="product.id">
+        <span>Name: {{ product.name }}</span>
+        <input v-model.number="product.stock">
+        <strong v-if="product.stock <= 0"> *** OUT OF STOCK</strong>
+        <button @click="addStock(product)">Add Stock</button>
+        <button @click="removeStock(product)">Remove Stock</button>
+      </li>
+    </ol>
+    <p>Total Items in Stock: {{ getTotalItemsInStock }}</p>
   </div>
 </template>
 
@@ -20,8 +30,19 @@ export default {
     }
   },
   methods: {
+    addStock: function (product) {
+      product.stock++;
+    },
+    removeStock: function (product) {
+      product.stock--;
+    }
   },
   computed: {
+    getTotalItemsInStock: function () {
+      return this.products.map(p => p.stock).reduce(function (a, b) {
+        return a + b;
+      }, 0)
+    }
   }
 }
 </script>

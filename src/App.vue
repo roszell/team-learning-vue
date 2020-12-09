@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <inventory-manager></inventory-manager>
+    <inventory-manager store-name="Target"></inventory-manager>
   </div>
 </template>
 
