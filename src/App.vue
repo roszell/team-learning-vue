@@ -2,10 +2,26 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link v-if="isLoggedIn" to="/Admin">Admin</router-link> 
     </div>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  props: {
+  },
+  computed: {
+      isLoggedIn: function () {
+          return this.$store.getters.isLoggedIn;
+      }
+  }
+}
+</script>
 
 <style>
 #app {

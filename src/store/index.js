@@ -8,10 +8,16 @@ export default new Vuex.Store({
     userName: String
   },
   getters: {
+    isLoggedIn: state => {
+      return state.userName !== "";
+    }
   },
   mutations: {
     initializeStore (state) {
       state.userName = "";
+    },
+    setUserName (state, payload) {
+      state.userName = payload.userName;
     }
   },
   actions: {

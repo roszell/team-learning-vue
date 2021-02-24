@@ -1,16 +1,16 @@
 <template>
   <div>
-    <inventory-manager store-name="Target"></inventory-manager>
+    <login />
   </div>
 </template>
 
 <script>
-import InventoryManager from '@/components/InventoryManager.vue'
+import Login from '@/components/Login.vue'
 
 export default {
   name: 'Home',
   components: {
-    InventoryManager
+    Login
   }
 }
 </script>
