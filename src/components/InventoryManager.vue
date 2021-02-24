@@ -23,9 +23,9 @@ export default {
   data: function () {
     return {
       products: [
-        { id: 1, name: 'Boots', stock: 0 },
-        { id: 2, name: 'Pants', stock: 1 },
-        { id: 3, name: 'Shirts', stock: 5 }
+        { id: 1, name: 'Fancy Boots', stock: 0, description: "Fancy alligator boots" },
+        { id: 2, name: 'Hiking Pants', stock: 1, description: "Pants designed for hiking"},
+        { id: 3, name: 'Plain Shirt', stock: 5, description: "Just a basic shirt"}
       ]
     }
   },
